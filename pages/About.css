@@ -1,0 +1,136 @@
+.about-section {
+    padding: 80px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+    z-index: 2; /* ensure content sits above the page overlay */
+}
+
+/* Apply the full-page background to the whole document (match Home page style) */
+body{
+    padding:0;
+    margin:0;
+    width:100%;
+    max-width:100%;
+    position: relative;
+    min-height: 100vh;
+    background: url('../assets/back.png') no-repeat center center;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* semi-opaque white overlay to dim the background image */
+    background: rgba(255, 255, 255, 0.80);
+    opacity: 1;
+    z-index: 0;
+}
+
+/* Ensure navbar sits above the overlay */
+.navbar{position: relative; z-index: 2}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 2.5em;
+    color: rgb(106, 55, 105);
+    margin-bottom: 12px;
+    font-family: 'Bruno Ace', sans-serif;
+}
+
+/* Decorative logo between heading and subtitle */
+.about-inline-logo{
+    display: block;
+    height: 4rem; /* larger logo as requested */
+    width: auto;
+    margin: 16px auto 36px; /* increased space below to separate from subtitle */
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: rgb(0, 47, 75);
+}
+
+.about-text h2 {
+    color: rgb(106, 55, 105);
+    font-family: 'Bruno Ace', sans-serif;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-mission {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.about-mission h2 {
+    color: rgb(106, 55, 105);
+    margin-bottom: 20px;
+    font-family: 'Bruno Ace', sans-serif;
+}
+
+.team-section {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.team-section h2 {
+    margin-bottom: 40px;
+    color: rgb(106, 55, 105);
+    font-family: 'Bruno Ace', sans-serif;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.team-member h3 {
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'Jost', sans-serif;
+}
+
+.team-member p {
+    color: #666;
+}

@@ -1,0 +1,83 @@
+.navbar {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    width: 100%;
+    height: 4em;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-logo {
+    height: 2.5em;
+    margin-right: 2rem;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Keep left items grouped together */
+.navbar-menu {
+    gap: 1rem;
+}
+
+.navbar-menu li {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.navbar-menu li a{
+    font-family: 'Bruno Ace', sans-serif;
+    color: rgb(106, 55, 105);
+    text-decoration: none;
+}
+
+.navbar-menu li a:hover {
+    color: #884a8a;
+}
+
+/* Sign in / Sign up button styles */
+.navbar-actions .btn-signin {
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: opacity 0.15s ease, transform 0.06s ease;
+}
+
+.navbar-actions .btn-signin {
+    color: #fff;
+    background: rgb(106, 55, 105);
+    border: 2px solid rgb(106, 55, 105);
+}
+
+.navbar-actions .btn-signin:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+/* Right-aligned actions container */
+.navbar-actions{
+    margin-left: auto; /* push actions to the far right */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* If a list item is used inside navbar-actions ensure no extra list styles */
+.navbar-actions a{display:inline-block}

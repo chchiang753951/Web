@@ -1,0 +1,311 @@
+#home-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    min-height: 100vh;
+    background: url('./back.png') no-repeat center center;
+    background-size: cover;
+}
+
+#home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* semi-opaque white overlay to dim the background image */
+    background: rgba(255, 255, 255, 0.80);
+    /* keep opacity at 1 because the rgba alpha controls transparency */
+    opacity: 1;
+    z-index: 0;
+}
+
+.home-section {
+    display: flex;
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    margin-top: 4em;
+}
+
+/* Hero (section 1) layout improvements */
+#home-section-1-paragraph {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.hero-cta {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cta {
+    background: #6a3769;
+    color: #fff;
+    padding: .75rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(106,55,105,0.12);
+}
+
+.btn-cta.secondary {
+    background: transparent;
+    color: #6a3769;
+    border: 1px solid rgba(106,55,105,0.12);
+}
+
+#home-section-1 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#home-section-1 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#home-section-1 .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home-section-1-image {
+    align-items: center;
+}
+
+#home-section-1-logo {
+    height: 3.5rem;
+    margin: 1rem 0;
+    width: fit-content;
+}
+
+#home-section-1-image img {
+    height: 25rem;
+    background-color: rgba(51, 51, 51, 0.5);
+    border-radius: var(--bs-border-radius);
+    box-shadow: var(--bs-box-shadow);
+}
+
+.home-section-2-paragraph {
+    margin-top: 1rem;
+}
+
+.home-section-2-paragraph h4 {
+    color: var(--bs-secondary-color);
+}
+
+.home-section-2-paragraph h4:before {
+    content: "";
+    width: .46em;
+    height: 1em;
+    display: inline-block;
+    background-image: url(/icon1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 1rem;
+}
+
+#home-section-3-container {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#home-section-3-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#home-section-3-cards .card {
+    border-color: #884a8a80;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#home-section-3-cards .card-title {
+    color: var(--bs-secondary-color);
+}
+
+    #home-section-3-cards .card-title:before {
+    content: "";
+    width: .46em;
+    height: 1em;
+    display: inline-block;
+    background-image: url(/icon2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 32px; /* increased spacing so icon sits further left from the title */
+}
+
+    /* The HTML uses an <img class="card-icon"> inside the title; ensure that actual img icons get spacing */
+    .card-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 32px; /* move icon further left from the title text */
+        width: 1.25em;
+        height: 1.25em;
+    }
+
+#home-section-3-image {
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+}
+
+#home-section-3-image img {
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.5);
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (min-width:900px) {
+    #home-section-3 {
+        position: relative;
+    }
+    /* center the content and constrain width so cards sit more centrally */
+    #home-section-3-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    /* give the cards a slightly smaller fixed column so they appear more centered */
+    #home-section-3-cards {
+        flex: 0 0 58%;
+        max-width: 58%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    /* shrink the image column so the image is smaller */
+    #home-section-3-image {
+        flex: 0 0 36%;
+        max-width: 36%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+    /* make the hero image responsive and not dominate the layout */
+    #home-section-3-image img {
+        width: 100%;
+        height: auto;
+        max-width: 360px;
+        object-fit: contain;
+    }
+}
+
+    /* How It Works section */
+    #how-it-works {
+        padding: 2.5rem 1rem;
+    }
+
+    .how-container {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .how-container .section-headline h2 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+    }
+
+    /* Use Bruno Ace for How it works heading */
+    .how-container .section-headline h2,
+    .how-container .section-headline h2 {
+        font-family: 'Bruno Ace', sans-serif;
+    }
+
+    .how-container .subhead {
+        color: #444;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+    }
+
+    /* Use Bruno Ace for the features section headline and keep it on one line */
+    .section-headline h2 {
+        font-family: 'Bruno Ace', sans-serif;
+        white-space: nowrap; /* keep the headline on a single line */
+    }
+
+    .how-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .step {
+        background: rgba(255,255,255,0.95);
+        padding: 1.25rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        text-align: left;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .step-number{
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+        border-radius: 50%;
+        background: #fff; /* white circle */
+        color: #6a3769; /* brand color for number */
+        border: 2px solid #6a3769; /* circular outline */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.25rem;
+    }
+
+    .step h4{
+        margin: 0 0 8px 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+    }
+
+    .step p{
+        margin: 0;
+        color: #444;
+        font-size: 1rem;
+    }
+
+    @media (min-width:700px){
+        .how-steps{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width:1100px){
+        .how-steps{
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .step{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .step-number{margin-bottom: 0.9rem}
+        .step h4{font-size:1.1rem}
+    }
